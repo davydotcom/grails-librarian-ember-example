@@ -1,0 +1,23 @@
+<h2>New Book</h2>
+
+<form {{action "save" model on="submit"}} class="form-horizontal">
+	<div class="form-group">
+		<label class="control-label">First Name</label>
+		{{input type="text" value=model.firstName}}
+	</div>
+	<div class="form-group">
+		<label class="control-label">Last Name</label>
+		{{input type="text" value=model.lastName}}
+	</div>
+	<div class="form-group">
+		<label class="control-label">Middle Name</label>
+		{{input type="text" value=model.middleName}}
+	</div>
+	<div class="form-group">
+		<label class="control-label">Biography</label>
+		{{textarea value=model.biography}}
+	</div>
+	<div class="form-group">
+		{{input type="submit" value="Save"}}
+	</div>
+</form>

@@ -1,0 +1,10 @@
+model {
+	grails.librarian.ember.example.Author author
+}
+
+json {
+	if(author) {
+		author g.render(template: 'author', model: [author: author])
+	}
+	
+}

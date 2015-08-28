@@ -1,0 +1,17 @@
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <a class="navbar-brand" href="#">Library Catalog</a>
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        {{#link-to 'books.index' class="nav-link"}}Books{{/link-to}}
+      </li>
+      <li class="nav-item">
+        {{#link-to 'authors.index' class="nav-link"}}Authors{{/link-to}}
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container">
+  <div class="col-xs-12">
+  {{outlet}}
+  </div>
+  </div><!-- /.container -->

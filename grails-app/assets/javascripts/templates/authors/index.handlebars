@@ -1,0 +1,31 @@
+  <h2>Authors</h2>
+
+  {{#if model}}
+
+	  <table class="table table-responsive table-striped">
+	  <thead>
+	  <tr>
+	  	<th>Name</th>
+	  	<th>Birth Date</th>
+	  	<th width="75"></th>
+	  </tr>
+	  </thead>
+	  <tbody>
+	  	{{#each model as |author|}}
+	  		<tr>
+	  			<td>{{author.lastName}}, {{author.firstName}} {{author.middleName}}
+	  			</td>
+	  			<td>{{author.birthDate}}</td>
+	  			<td><a class="btn btn-link">Edit</a></td>
+  			</tr>
+	  	{{/each}}
+	  </tbody>
+	  </table>
+	  {{#link-to 'authors.new' class="btn btn-success"}}New Author{{/link-to}}
+  {{else}}
+  	<div class="well">
+  		<h4>No authors in database</h4>
+  		<p>You have not added any authors into the database yet.</p>
+  		<p>{{#link-to 'authors.new' class="btn btn-success"}}New Author{{/link-to}}</p>
+  	</div>
+  {{/if}}

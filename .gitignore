@@ -1,0 +1,5 @@
+build/
+.gradle
+.asscache
+.sass-cache
+.jruby-container

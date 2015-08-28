@@ -1,0 +1,13 @@
+model {
+	grails.librarian.ember.example.Author author
+}
+
+json {
+	id author.id
+	firstName author.firstName
+	lastName author.lastName
+	middleName author.middleName
+	birthDate author.birthDate
+	biography author.biography
+	bookIds author.books?.collect { it.id }
+}
