@@ -13,10 +13,8 @@ class AuthorController {
     	render view: 'index', model: [authors: authors]
     }
 
-    def show() {
-    	def author = Author.get(params.long('id'))
-
-    	return [author: author]
+    def show( Author author ) {
+    	respond author
     }
 
     def save() {
@@ -28,7 +26,7 @@ class AuthorController {
     		response.status = 400
     	}
 
-    	render view: 'show', model: [author: author]
+        respond author, view:'show'
     }
 
 

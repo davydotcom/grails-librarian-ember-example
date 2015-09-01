@@ -1,12 +1,8 @@
 
 model {
-	Collection<grails.librarian.ember.example.Author> authors
+	Collection<Author> authors
 }
 
 json {
-	authors g.render(
-		template:"author",
-		collection: authors, 
-		var:'author'
-	)
+	authors tmpl.author(authors)
 }

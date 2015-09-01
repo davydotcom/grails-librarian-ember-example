@@ -1,5 +1,5 @@
 model {
-	grails.librarian.ember.example.Author author
+	Author author
 }
 
 json {

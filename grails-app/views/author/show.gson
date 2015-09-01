@@ -1,10 +1,10 @@
 model {
-	grails.librarian.ember.example.Author author
+	Author author
 }
 
 json {
 	if(author) {
-		author g.render(template: 'author', model: [author: author])
+		author tmpl.author(author)
 	}
 	
 }

@@ -1,15 +1,14 @@
 
 model {
-	Collection<grails.librarian.ember.example.Book> books
+	Collection<Book> books
 }
 
 json {
-	books g.render(template:"book", collection: books, var:'book')
-	authors g.render(
-		template:"/author/author",
-		collection: books.collect{ grails.librarian.ember.example.Book book -> 
+	books tmpl.book(books)
+	authors tmpl."/author/author"(
+		"author",
+		books.collect{ Book book -> 
 			book.author
-		}, 
-		var:'author'
+		}
 	)
 }

@@ -12,10 +12,8 @@ class BookController {
     	render view: 'index', model: [books: books]
     }
 
-    def show() {
-    	def book = Book.get(params.long('id'))
-
-    	return [book: book]
+    def show(Book book) {
+        respond book
     }
 
     def save() {
@@ -26,8 +24,7 @@ class BookController {
     	if(!book.save(flush:true)) {
     		response.status = 400
     	}
-
-    	render view: 'show', model: [book: book]
+        respond book, view:'show'
     }
 
 
